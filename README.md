@@ -1,2 +1,2 @@
 # yadro-test
-test task for YADRO company
+Test task from YADRO company
