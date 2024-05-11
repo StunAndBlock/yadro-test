@@ -3,7 +3,7 @@
 
 int main(int argc, char** argv){
 
-    ClubCollector app(argc,argv);
+    ClubCollector app(argc,nullptr);
 
     switch (app.status())
     {

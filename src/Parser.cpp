@@ -21,3 +21,7 @@ void Parser::openFile(const std::string& fileName){
     }
     return ;
 }
+
+void CustomTxtParser::read(){
+
+}
