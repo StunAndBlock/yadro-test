@@ -27,6 +27,8 @@ add base implementations
 Status:
 ~ add base class
 
+Makefile:
+need to be completed
 
 .global:
 add unified header for usefull includes
