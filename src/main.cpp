@@ -3,17 +3,17 @@
 
 int main(int argc, char** argv){
 
-    ClubCollector app(argc,nullptr);
+    ClubCollector app(argc,argv);
 
     switch (app.status())
     {
-    case 0:
-        /* code */
+    case ClubCollector::Status::Success:
+        app.exec();
         break;
     
     default:
         break;
     }
 
-    return 0;
+    return static_cast<int>(app.status());
 }

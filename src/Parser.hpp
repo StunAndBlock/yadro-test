@@ -2,30 +2,41 @@
 #define PARSER_HPP
 
 #include <fstream>
-
-
+#include <sstream>
+#include "CoreData.hpp"
 class Parser {
     public:
+    enum class Status : uint8_t {BadOpen, SuccessOpen, SuccessParsed, BadParsed, BadAlloc, Initialized};
     Parser();
     virtual ~Parser();
     void openFile(const std::string&);
-    virtual void read() = 0;
-
+    virtual void parseFile() = 0;
+    Status status();
     protected:
     std::ifstream* file_;
     
     private:
-    
+    Status status_;
 };
 
-class CustomTxtParser: public Parser{
+class TxtParser: public Parser{
     public:
-    void read() override;
+    void parseFile() override;
 
     private:
 };
 
+/*
+class JsonParser: public Parser{
 
+}; 
+*/
+
+/*
+class XmlParser: public Parser {
+
+};
+*/
 
 
 

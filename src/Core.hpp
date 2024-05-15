@@ -2,14 +2,17 @@
 #define CORE_HPP
 
 #include "Usefullincludes.hpp"
-
+#include "CoreData.hpp"
 
 class Core {
 public:
     Core();
     ~Core();
+    enum class Status : uint8_t {BadOpen, SuccessOpen, SuccessParsed, BadParsed, BadAlloc, Initialized};
+    Status status();
 private:
-    uint8_t someData_;
+    Status status_;
+    struct CoreData tepm_; 
 };
 
 

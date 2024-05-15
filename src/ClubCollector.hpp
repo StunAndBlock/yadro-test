@@ -3,16 +3,19 @@
 
 #include "Parser.hpp"
 #include "Core.hpp"
+#include "ErrorHandler.hpp"
 
 class ClubCollector {
     public:
+    enum class Status : uint8_t {Initialized, Failed, BadCall, Success };
     ClubCollector(int, char**);
     ~ClubCollector();
-    uint8_t status();
+    Status status();
+    void exec();
     private:
-    CustomTxtParser pars_;
-    Core main_;
-    uint8_t status_;
+    TxtParser parser_;
+    Core core_;
+    Status status_;
 };
 
 
