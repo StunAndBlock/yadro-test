@@ -26,14 +26,20 @@ MAIN_M			=main.cpp
 MAIN_O			=main.o
 CLUBCOLLECTOR_M =ClubCollector.cpp ClubCollector.hpp
 CLUBCOLLECTOR_O =ClubCollector.o
-CORE_M			=Core.cpp Core.hpp
+CORE_M			=Core.cpp Core.hpp CoreData.hpp
 CORE_O			=Core.o
 PARSER_M		=Parser.cpp Parser.hpp
 PARSER_O		=Parser.o
+ERRORHANDLER_M  = ErrorHandler.cpp ErrorHandler.hpp
+ERRORHANDLER_O  = ErrorHandler.o
+TMEXTENSION_M  = TmExtension.cpp TmExtension.hpp
+TMEXTENSION_O  = TmExtension.o
 
-SRC_FILES = $(addprefix $(SRC_DIR)/,$(MAIN_M) $(CLUBCOLLECTOR_M) $(CORE_M) $(PARSER_M) )
 
-OBJS = $(MAIN_O) $(CLUBCOLLECTOR_O) $(CORE_O) $(PARSER_O) 
+
+SRC_FILES = $(addprefix $(SRC_DIR)/,$(MAIN_M) $(CLUBCOLLECTOR_M) $(CORE_M) $(PARSER_M) $(ERRORHANDLER_M) $(TMEXTENSION_M))
+
+OBJS = $(MAIN_O) $(CLUBCOLLECTOR_O) $(CORE_O) $(PARSER_O) $(ERRORHANDLER_O) $(TMEXTENSION_O)
 DBG_OBJS = $(addprefix $(DBG_OBJ_PATH)/,$(OBJS))
 RELEASE_OBJS = $(addprefix $(RELEASE_OBJ_PATH)/,$(OBJS))
 
