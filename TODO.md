@@ -3,6 +3,7 @@ ClubCollector:
 
 Parser:
 ~ add Factory pattern to choose class type of parser automatically
+remove debug
 
 Core:
 add base std::array<Event> to private field
