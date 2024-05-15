@@ -1,36 +1,32 @@
-main:
-add status check and base execution logic
-
 ClubCollector:
 ~ rename ?
-add status codes: implement enum/class Status
-~ implement Bridge pattern between Core and Parser 
 
 Parser:
-~ rename ?
-add status codes: implement enum/class Status
-add base CustomTxtParser implementation
 ~ add Factory pattern to choose class type of parser automatically
 
 Core:
-add status codes: implement enum/class Status
-add base data
+add base std::array<Event> to private field
 add base logic
 add base implementations
+
+Event:
+add base class
+~ add derived InputEvents & OutputEvent
+add base logics
+
+TmExtension:
+~add constructor/method from string;
 
 ErrorHandler:
-add base class
-add base data
-add base logic
-add base implementations
-
-Status:
-~ add base class
-
+split defenition of error::raise into .cpp if possible
 
 .global:
 add unified header for usefull includes
+prettify TODO.md
 
+Makefile:
+rewrite to correct modular system
 
+## esimated completion ~70%
 ## ~ - probably
 ## ? - not resolved
