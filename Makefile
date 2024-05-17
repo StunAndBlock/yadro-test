@@ -34,12 +34,12 @@ ERRORHANDLER_M  = ErrorHandler.cpp ErrorHandler.hpp
 ERRORHANDLER_O  = ErrorHandler.o
 TMEXTENSION_M  = TmExtension.cpp TmExtension.hpp
 TMEXTENSION_O  = TmExtension.o
+EVENT_M  = Event.cpp Event.hpp
+EVENT_O  = Event.o
 
+SRC_FILES = $(addprefix $(SRC_DIR)/,$(MAIN_M) $(CLUBCOLLECTOR_M) $(CORE_M) $(PARSER_M) $(ERRORHANDLER_M) $(TMEXTENSION_M) $(EVENT_M))
 
-
-SRC_FILES = $(addprefix $(SRC_DIR)/,$(MAIN_M) $(CLUBCOLLECTOR_M) $(CORE_M) $(PARSER_M) $(ERRORHANDLER_M) $(TMEXTENSION_M))
-
-OBJS = $(MAIN_O) $(CLUBCOLLECTOR_O) $(CORE_O) $(PARSER_O) $(ERRORHANDLER_O) $(TMEXTENSION_O)
+OBJS = $(MAIN_O) $(CLUBCOLLECTOR_O) $(CORE_O) $(PARSER_O) $(ERRORHANDLER_O) $(TMEXTENSION_O) $(EVENT_O)
 DBG_OBJS = $(addprefix $(DBG_OBJ_PATH)/,$(OBJS))
 RELEASE_OBJS = $(addprefix $(RELEASE_OBJ_PATH)/,$(OBJS))
 
