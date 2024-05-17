@@ -10,7 +10,8 @@ class Parser {
     Parser();
     virtual ~Parser();
     void openFile(const std::string&);
-    virtual void parseFile() = 0;
+    virtual void parseCoreData(CoreData*) = 0;
+    virtual bool parseEvent(std::shared_ptr<event::Input>&) = 0;
     Status status();
     protected:
     std::ifstream* file_;
@@ -21,8 +22,8 @@ class Parser {
 
 class TxtParser: public Parser{
     public:
-    void parseFile() override;
-
+    void parseCoreData(CoreData* ) override;
+    bool parseEvent(std::shared_ptr<event::Input>&) override;
     private:
 };
 

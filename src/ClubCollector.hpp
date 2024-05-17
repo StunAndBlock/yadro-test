@@ -3,8 +3,7 @@
 
 #include "Parser.hpp"
 #include "Core.hpp"
-#include "ErrorHandler.hpp"
-
+#include "Event.hpp"
 class ClubCollector {
     public:
     enum class Status : uint8_t {Initialized, Failed, BadCall, Success };

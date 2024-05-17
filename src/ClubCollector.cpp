@@ -1,6 +1,5 @@
 #include "ClubCollector.hpp"
 
-
 ClubCollector::ClubCollector(int argc, char** argv){
     if(parser_.status() == Parser::Status::Initialized &&
        core_.status() == Core::Status::Initialized){
@@ -37,7 +36,12 @@ ClubCollector::Status ClubCollector::status(){
 
 void ClubCollector::exec(){
     try {
-        parser_.parseFile();
+        parser_.parseCoreData(core_.data());
+        while(parser_.parseEvent(core_.event())){
+            core_.processEvent();
+            
+        }
+    
     } catch (const std::exception& ex){
         error::raise(error::Level::Fatal, ex.what());
     }

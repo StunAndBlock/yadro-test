@@ -10,18 +10,21 @@
 class TimeEx {
     public:
     TimeEx();
-    TimeEx(int, int);
+    TimeEx(int, int, int);
     TimeEx(struct std::tm);
     //TimeEx(std::string);
     //void fromString(std::string&);
     bool operator>(const TimeEx& rhs) const;
+    bool operator>=(const TimeEx& rhs) const;
     bool operator<(const TimeEx& rhs) const;
-    friend std::ostream& operator<<(std::ostream&, const TimeEx&) ;
+    friend std::ostream& operator<<(std::ostream&, const TimeEx&);
+    void makeNextDay();
     private:
     int tm_total_min_;
     int tm_hour;
     int tm_min;
-    void updateMin();
+    int tm_day;
+    void updateTotalMin();
 
 };
 
