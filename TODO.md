@@ -1,28 +1,22 @@
-ClubCollector:
-~ rename ?
-
 Parser:
-~ add Factory pattern to choose class type of parser automatically
 remove debug
+complete Event parser
 
 Core:
-add base std::array<Event> to private field
+remove Event ptr from private: -> make Event ptr in exec() and pass to core_.proccess();
 add base logic
 add base implementations
 
-Event:
-add base class
-~ add derived InputEvents & OutputEvent
-add base logics
-
 TmExtension:
-~add constructor/method from string;
+~rename
+add constructor/method from string;
+add check if string is correct, put_time is not suitable;
 
 ErrorHandler:
 split defenition of error::raise into .cpp if possible
 
 .global:
-add unified header for usefull includes
+rename unified header for usefull includes
 prettify TODO.md
 
 Makefile:
